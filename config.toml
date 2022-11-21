@@ -1,6 +1,9 @@
 # The URL the site will be built for
 base_url = "https://example.com"
 
+# The default language; used in feeds.
+default_language = "en"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -29,6 +32,38 @@ theme = "DeepThought"
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
+
+# Optional translation object for the default language
+# Example:
+#     default_language = "fr"
+#
+#     [translations]
+#     title = "Un titre"
+#
+[translations]
+
+# Additional languages definition
+# You can define language specific config values and translations: 
+# title, description, generate_feed, feed_filename, taxonomies, build_search_index
+# as well as its own search configuration and translations (see above for details on those)
+[languages.es]
+    title = "Datalab"
+    description = "Laboratorio de Ciencia de Datos Universidad Técnica Federico Santa María"
+    code = "es"
+    weight = 2
+[languages.es.translations]
+    language_name = 'Español'
+[languages.en]
+    # The site title and description; used in feeds by default.
+    title = "Datalab"
+    description = "Universidad Técnica Federico Santa María Data Science Laboratory"
+    code = "en"
+    weight = 1
+[languages.en.translations]
+    language_name = 'English'
+
+
+
 [extra]
 # Put all your custom variables here
 katex.enabled = true
@@ -46,20 +81,27 @@ navbar_items = [
   { url = "$BASE_URL/people", name = "People" },
   { url = "$BASE_URL/contact", name = "Contact" },
  ]},
+ { code = "es", nav_items = [
+  { url = "$BASE_URL/es", name = "Inicio" },
+  { url = "$BASE_URL/es/publications", name = "Publicaciones" },
+  { url = "$BASE_URL/es/research", name = "Lineas De Investigación"  },
+  { url = "$BASE_URL/es/people", name = "Personas" },
+  { url = "$BASE_URL/es/contact", name = "Contacto" },
+ ]},
 ]
 
 # Add links to favicon, you can use https://realfavicongenerator.net/ to generate favicon for your site
 [extra.favicon]
-favicon_16x16 = "/icons/favicon-16x16.png"
-favicon_32x32 = "/icons/favicon-32x32.png"
-apple_touch_icon = "/icons/apple-touch-icon.png"
-safari_pinned_tab = "/icons/safari-pinned-tab.svg"
+favicon_16x16 = "/icons/logo_datalab_simple_icon.png"
+favicon_32x32 = "/icons/logo_datalab_simple_icon.png"
+apple_touch_icon = "/icons/logo_datalab_simple_icon.png"
+safari_pinned_tab = "/icons/logo_datalab_simple.svg"
 webmanifest = "/icons/site.webmanifest"
 
 # Author details
 [extra.author]
 name = "Datalab"
-avatar = "/images/avatar.png"
+avatar = "/images/logo_datalab_simple.png"
 
 # Social links
 [extra.social]

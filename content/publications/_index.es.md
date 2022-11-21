@@ -1,5 +1,5 @@
 +++
-title = "Publications"
+title = "Publicaciones"
 description = "Publications page with Bibtex."
 +++
 <div id="bibbase-container">
